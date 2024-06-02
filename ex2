@@ -1,0 +1,14 @@
+import math
+
+
+def main(z):
+    if z < -41:
+        return 76 * (z**2 + 0.02)**7 + z/54
+    elif -41 <= z < 21:
+        return (abs(z**3))**5
+    elif 21 <= z < 49:
+        return 37 - z**9 - (86*z**3 + 97*z)**5
+    elif 49 <= z < 137:
+        return 11*math.log(56+98*z**2 + z**3, 10)**5
+    elif z >= 137:
+        return math.atan(z) - (((abs(3+44*z))**2)/68)
