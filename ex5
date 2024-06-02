@@ -1,0 +1,15 @@
+import math
+
+
+def main(z, x, y):
+    n = len(z)
+    z.insert(0, 0)
+    x.insert(0, 0)
+    y.insert(0, 0)
+    total = 0
+    for i in range(1, n + 1):
+        left = z[n+1-i]
+        middle = y[math.ceil(i / 4)] ** 2
+        right = 91 * x[n + 1 - math.ceil(i / 2)] ** 3
+        total += (left + middle + right) * 67
+    return 47 * total
