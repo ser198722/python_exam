@@ -1,0 +1,7 @@
+def main(n, a, m, p):
+    summa = 0
+    for k in range(1, m + 1):
+        for j in range(1, a + 1):
+            for i in range(1, n + 1):
+                summa += 4*(i+48*i**2+69)**7 - 78*p - (k**3+0.09+j)**5
+    return summa
