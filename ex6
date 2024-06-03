@@ -1,0 +1,15 @@
+from math import floor
+from itertools import product
+
+
+def main(m1):
+    f1 = {m for m in m1 if (m < -99) or (m > 13)}
+    l1 = {(m % 2) + (floor(f / 9)) for m in m1 for f in f1 if m < f}
+    o1 = {f * l2 for f in f1 for l2 in l1 if f > l2}
+
+    left = len(list(product(l1, o1)))
+    total = 0
+    for o in o1:
+        total += floor(o / 8)
+    return left - total
+
