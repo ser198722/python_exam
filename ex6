@@ -1,3 +1,5 @@
+# img6_1
+
 from math import floor
 from itertools import product
 
