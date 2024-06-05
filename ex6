@@ -1,5 +1,23 @@
 # img6_1
 
+from itertools import product
+
+
+def main(m1):
+    f1 = {m*m for m in m1 if m <= 78}
+    k1 = {7*m for m in m1 if (m <= 19 or m >= -20)}
+    x1 = {3*f + k % 3 for f in f1 for k in k1 if f >= k}
+
+    left = len(k1 | x1)
+    total = 0
+    for k, x in product(k1, x1):
+        total += k*x
+    return left + total
+
+
+
+# img6_2
+
 from math import floor
 from itertools import product
 
