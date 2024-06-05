@@ -33,3 +33,20 @@ def main(m1):
         total += floor(o / 8)
     return left - total
 
+
+
+# img6_3
+
+from math import ceil
+from itertools import product
+
+
+def main(o1):
+    n1 = {abs(o) + 8*o for o in o1 if -60 <= o <= 47}
+    b1 = {abs(o) for o on o1 if o > -77 and o <= 99}
+    l1 = {v - ceil(v / 6) for v in n1 if (v > -53) ^ (v <= 27)}
+    left = len(b1 | l1)
+    total = 0
+    for b, d in product(b1, l1):
+        total += b % 3 - 9 * d
+    return left - total
