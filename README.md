@@ -1,3 +1,3 @@
 # python_exam
 
-Решение задач по kispython 1-12
+Решение задач по kispython 5-8
