@@ -1,0 +1,88 @@
+def main(z):
+    z1 = int(z['z1'])
+    z2 = int(z['z2']) << 3
+    z3 = int(z['z3']) << 9
+    z5 = int(z['z5']) << 17
+    z6 = int(z['z6']) << 23
+    return hex(z1 | z2 | z3 | z5 | z6)
+
+
+print(main({'z1': '3', 'z2': '2', 'z3': '11', 'z5': '32', 'z6': '525'}))
+
+
+def main1(v):
+    v1 = int(v[0])
+    v2 = int(v[1]) << 9
+    v3 = int(v[2]) << 18
+    v4 = int(v[3]) << 19
+    v5 = int(v[4]) << 23
+    v6 = int(v[5]) << 24
+
+    return (v1 | v2 | v3 | v4 | v5 | v6)
+
+
+print(main1((376, 159, 1, 0, 1, 21)))
+
+
+def main2(z):
+    z = int(z, 16)
+    r1 = z & 0b1111
+    r2 = (z >> 4) & 0b111111111
+    r3 = (z >> 13) & 0b111
+    r4 = (z >> 16) & 0b111
+    r5 = (z >> 19) & 0b111111
+    return {'R1':str(r1), 'R2':str(r2), 'R3':str(r3),'R4':str(r4), 'R5':str(r5)}
+
+
+print(main2('0x6a9f6'))
+
+
+def main3(z):
+    z = int(z, 16)
+    r1 = z & 0b111111
+    r2 = (z >> 6) & 0b111111
+    r3 = (z >> 12) & 0b1111111
+    r4 = (z >> 19) & 0b11
+    r5 = (z >> 21) & 0b111
+    return {'N1':str(r1), 'N2':str(r2), 'N3':str(r3),'N4':str(r4), 'N5':str(r5)}
+
+
+print(main3('0xb9a562'))
+
+
+def main4(z):
+    z = int(z)
+
+    s1 = z & 0b111
+    s2 = (z >> 3) & 0b1111
+    s4 = (z >> 17) & 0b1111111111
+    s5 = (z >> 27) & 0b1111111111
+    s = {'s1':s1, 's2':s2, 's4':s4, 's5':s5}
+
+    z1 = int(s['s4'])
+    z2 = int(s['s1']) << 20
+    z4 = int(s['s5']) << 23
+    z5 = int(s['s2']) << 33
+    return hex(z1 | z2 | z4 | z5)
+
+
+print(main4('239948252'))
+
+
+def main5(z):
+    z = int(z)
+
+    s1 = z & 0b1111111
+    s2 = (z >> 7) & 0b111
+    s3 = (z >> 10) & 0b111111
+    s4 = (z >> 16) & 0b1111
+    s = {'s1':s1, 's2':s2, 's3':s3, 's4':s4}
+
+    z1 = int(s['s1'])
+    z2 = int(s['s3']) << 7
+    z4 = int(s['s4']) << 13
+    z5 = int(s['s2']) << 17
+    return z1 | z2 | z4 | z5
+
+
+print(main5('743096'))
